@@ -3,22 +3,32 @@ $:.push File.expand_path("../lib", __FILE__)
 require "retriever/version"
 
 Gem::Specification.new do |s|
-  s.name        = "retriever"
+  s.name        = 'retriever'
   s.version     = Retriever::VERSION
-  s.authors     = ["Nelvin Driz"]
-  s.email       = ["ndriz@exist.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.authors     = ['Nelvin Driz']
+  s.email       = ['ndriz@exist.com']
+  s.homepage    = "http://github.com/Keoven/Retriever"
+  s.summary     = %q{Retriever is a block result caching library.}
+  s.description = %q{
+    Retriever allows caching of the result of a block. It currently supports ruby memory storage and redis.
+  }
 
-  s.rubyforge_project = "retriever"
+  s.rubyforge_project = 'retriever'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  # Development
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'redis'
+  s.add_development_dependency 'yajl-ruby'
+  s.add_development_dependency 'rails'
+  s.add_development_dependency 'timecop'
+  s.add_development_dependency 'ruby-debug19'
+  s.add_development_dependency 'simplecov'
+
+  # Runtime
+  s.add_runtime_dependency 'activesupport'
 end

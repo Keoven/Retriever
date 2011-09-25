@@ -2,3 +2,8 @@
 .bundle
 Gemfile.lock
 pkg/*
+.rvmrc
+.DS_Store
+dump.rdb
+coverage
+doc

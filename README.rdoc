@@ -1,0 +1,40 @@
+= Retriever
+
+A block result caching library.
+
+== Installation
+
+Either include to your <tt>Gemfile</tt> or install it.
+
+   # Bash
+   $ gem install retriever
+
+   # Gemfile
+   gem 'retriever'
+
+== Rails Usage
+
+Create file <tt>config/initializer/retriever.rb</tt> with your configuration.
+
+=== Example <tt>retriever.rb</tt>
+
+   Retriever.config.storage(:memory)
+   Retreiver.catch! do
+     target :bone do |parameters|
+       ...
+     end
+   end
+
+=== Example Usage (Controller)
+
+   def index
+     @bone = Retriever.fetch(:bone)
+   end
+
+== {Documentation}[http://rubydoc.info/gems/retriever/frames]
+
+== License
+
+Copyright (c) 2011 Nelvin Driz.
+
+Retriever is free software released under the MIT license.
